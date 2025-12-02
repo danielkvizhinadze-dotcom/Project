@@ -18,5 +18,17 @@ namespace Project
                 books.Remove(Result);
             }
         }
+        public Book? SearchBook(string title)
+        {
+            return books.FirstOrDefault(b => b.Title == title);
+        }
+        public void ShowAll()
+        {
+            foreach (var book in books)
+            {
+                Console.WriteLine
+                ($"Title: {book.Title} Author: {book.Author} ReleaseYear: {book.ReleaseYear}");
+            }
+        }
     }
 }
